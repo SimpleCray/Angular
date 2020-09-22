@@ -22,7 +22,7 @@
 <button class="btn btn-primary" (click)="onDisplayDetail()">Display Detail</button>
 <div *ngIf="clickTimes">
   <p 
-    *ngFor="let time of clickTimes" 
-    [ngStyle]="{backgroundColor: time >= 5 ? 'lightblue':'transparent'}"
-    [ngClass]="{whiteText: time >= 5}"> Button click {{ time }} times by Hai Duong</p>
+    *ngFor="let time of clickTimes; let i = index" 
+    [ngStyle]="{backgroundColor: i >= 4 ? 'lightblue':'transparent'}"
+    [ngClass]="{whiteText: i >= 4}"> Button clicked on <strong>{{ time }}</strong> by Hai Duong</p>
 </div>

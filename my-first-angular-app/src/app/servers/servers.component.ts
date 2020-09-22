@@ -42,7 +42,8 @@ export class ServersComponent implements OnInit {
     this.userName = ''
   }
   onDisplayDetail() {
-    this.clickTimes.push(++this.count)
+    // this.clickTimes.push(++this.count)
+    this.clickTimes.push(new Date())
   }
   ngOnInit(): void {
   }
