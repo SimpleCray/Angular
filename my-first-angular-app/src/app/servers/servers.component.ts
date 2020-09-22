@@ -19,8 +19,12 @@ export class ServersComponent implements OnInit {
   serverCreationStatus = "No server created !"
   serverName=''
   userName=''
+  servers=['Server 1', 'Server 2']
   serverCreated=false
+  count=0
+  clickTimes = [];
   onCreateServer() {
+    this.servers.push(this.serverName)
     this.serverCreated = true
     this.serverCreationStatus = "Server created successful with name: " + this.serverName
   }
@@ -37,7 +41,9 @@ export class ServersComponent implements OnInit {
   onResetUserName(){
     this.userName = ''
   }
-
+  onDisplayDetail() {
+    this.clickTimes.push(++this.count)
+  }
   ngOnInit(): void {
   }
 }

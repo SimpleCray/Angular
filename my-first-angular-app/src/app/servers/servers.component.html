@@ -4,9 +4,25 @@
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add new server</button>
 <!-- <p [innerText]="allowNewServer"></p> -->
 <p>{{serverCreationStatus}}</p>
-<p *ngIf=(serverCreated)>(Using Directive) Server is created successful with name {{serverName}}</p>
-<app-server></app-server>
+<p *ngIf="serverCreated; else noServer">(Using Directive) Server is created successful with name {{serverName}}</p>
+<ng-template #noServer>
+  <p>No server was created</p>
+</ng-template>
+<app-server *ngFor="let server of servers"></app-server>
+
+<hr>
+<p>Practice 1</p>
 <label>Username</label>
 <input type="text" class="form-control" [(ngModel)]="userName">
 <p>{{userName}}</p>
 <button class="btn btn-primary" [disabled]="userName==='' || userName.trim()===''" (click)="onResetUserName()">Reset Username</button>
+
+<hr>
+<p>Practice 2</p>
+<button class="btn btn-primary" (click)="onDisplayDetail()">Display Detail</button>
+<div *ngIf="clickTimes">
+  <p 
+    *ngFor="let time of clickTimes" 
+    [ngStyle]="{backgroundColor: time >= 5 ? 'lightblue':'transparent'}"
+    [ngClass]="{whiteText: time >= 5}"> Button click {{ time }} times by Hai Duong</p>
+</div>
