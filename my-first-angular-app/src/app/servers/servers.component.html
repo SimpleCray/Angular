@@ -1,0 +1,12 @@
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<hr>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add new server</button>
+<!-- <p [innerText]="allowNewServer"></p> -->
+<p>{{serverCreationStatus}}</p>
+<p *ngIf=(serverCreated)>(Using Directive) Server is created successful with name {{serverName}}</p>
+<app-server></app-server>
+<label>Username</label>
+<input type="text" class="form-control" [(ngModel)]="userName">
+<p>{{userName}}</p>
+<button class="btn btn-primary" [disabled]="userName==='' || userName.trim()===''" (click)="onResetUserName()">Reset Username</button>
