@@ -28,4 +28,8 @@ export class AppComponent {
       content: bluePrint.serverContent
     })
   }
+
+  onChangeFirst(){
+    this.serverElements[0].name = "Changed !"
+  }
 }

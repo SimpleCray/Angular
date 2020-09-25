@@ -9,3 +9,6 @@ ng generate component [name] - ng g c [name]
 ng g c [name] --skipTests true (skip the test file)
 ## How it start
 main.ts -> app.module.ts -> app.component.ts  -> app.component.html, app.component.css
+
+## Other note
+@ViewChild('serverContentInput', {static: true}) serverContentInput: ElementRef;
