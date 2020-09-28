@@ -1,0 +1,18 @@
+<div class="container">
+  <app-game-control (gameStarted)="onGameStarted($event)"></app-game-control>
+  <hr>
+  <div class="row" >
+    <div class="col-md-6">
+      <div class="alert alert-success">Event Number Count: {{evenNumbers.length}}</div>
+      <app-even
+      *ngFor="let evenNumber of evenNumbers" [number]="evenNumber">
+      </app-even>
+    </div>
+    <div class="col-md-6">
+      <div class="alert alert-danger">Odd Number Count: {{oddNumbers.length}}</div>
+      <app-odd
+      *ngFor="let oddNumber of oddNumbers" [number]="oddNumber">
+      </app-odd>
+    </div>
+  </div>
+</div>

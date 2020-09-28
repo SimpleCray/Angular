@@ -1,11 +1,9 @@
 <div
 class="panel panel-default">
 <!-- <div class="panel-heading">{{ element.name }}</div> -->
-<div class="panel-heading">{{ name }}</div>
+<div class="panel-heading" #heading>{{ name }}</div>
 <div class="panel-body">
-  <p>
-    <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
-    <strong *ngIf="element.type === 'bluePrint'">{{ element.content }}</strong>
-  </p>
+  <!-- Use <ng-content></ng-content> to receive paragraph from app.component.html -->
+  <ng-content></ng-content>
 </div>
 </div>
