@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'project-theBasics';
+  currentPage='recipes';
+
+  displayComponent(component){
+    return this.currentPage=component
+  }
 }

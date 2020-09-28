@@ -1,9 +1,11 @@
-<app-header></app-header>
+<app-header
+  (toComponent)="displayComponent($event)"
+></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes></app-recipes>
-      <app-shopping-list></app-shopping-list>
+      <app-recipes *ngIf="currentPage ==='recipes'"></app-recipes>
+      <app-shopping-list *ngIf="currentPage ==='shoppinglist'"></app-shopping-list>
     </div>
   </div>
 </div>
